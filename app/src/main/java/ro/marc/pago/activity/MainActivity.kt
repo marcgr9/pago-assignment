@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import ro.marc.pago.R
@@ -14,8 +15,13 @@ class MainActivity: AppCompatActivity() {
     var navController: NavController? = null
         private set
 
+    var hasLoaded = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val splashScreen = installSplashScreen()
+        splashScreen.setKeepOnScreenCondition { !hasLoaded }
 
         setContentView(R.layout.activity_main)
 

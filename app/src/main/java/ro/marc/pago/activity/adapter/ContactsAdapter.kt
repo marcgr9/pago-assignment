@@ -3,21 +3,16 @@ package ro.marc.pago.activity.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import ro.marc.pago.data.dto.Contact
 import ro.marc.pago.databinding.CompContactBinding
-import java.time.OffsetDateTime
-import java.time.format.DateTimeFormatter
-import java.util.Date
-import java.util.concurrent.TimeUnit
-import kotlin.random.Random
 
 class ContactsAdapter(
-    private val onClick: (Int) -> Unit,
+    private val onClick: (Contact) -> Unit,
 ): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private val contacts: MutableList<Int> = mutableListOf()
+    private val contacts: MutableList<Contact> = mutableListOf()
 
-    fun setContacts(newContacts: List<Int>) {
-        println(newContacts.size)
+    fun setContacts(newContacts: List<Contact>) {
         contacts.clear()
         contacts.addAll(newContacts)
 
@@ -40,8 +35,8 @@ class ContactsAdapter(
 
     private class ViewHolder(private val item: CompContactBinding) : RecyclerView.ViewHolder(item.root) {
 
-        fun bind(contact: Int) {
-            item.name.text = "snifv"
+        fun bind(contact: Contact) {
+            item.name.text = contact.name
         }
 
     }
