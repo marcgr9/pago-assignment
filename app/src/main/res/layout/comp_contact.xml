@@ -18,13 +18,25 @@
             android:id="@+id/thumbnail"
             android:layout_width="@dimen/view_x5"
             android:layout_height="@dimen/view_x5"
-            android:background="@android:color/holo_green_dark"
+            android:src="@drawable/frag_main_thumbnail_placeholder"
             app:layout_constraintHorizontal_bias="0"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/name"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/initials"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@id/thumbnail"
+            app:layout_constraintEnd_toEndOf="@id/thumbnail"
+            app:layout_constraintTop_toTopOf="@id/thumbnail"
+            app:layout_constraintBottom_toBottomOf="@id/thumbnail" />
 
         <TextView
             android:id="@+id/name"

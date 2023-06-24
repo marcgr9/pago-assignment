@@ -3,6 +3,9 @@ package ro.marc.pago.activity.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.signature.ObjectKey
+import ro.marc.pago.R
 import ro.marc.pago.data.dto.Contact
 import ro.marc.pago.databinding.CompContactBinding
 
@@ -36,7 +39,24 @@ class ContactsAdapter(
     private class ViewHolder(private val item: CompContactBinding) : RecyclerView.ViewHolder(item.root) {
 
         fun bind(contact: Contact) {
+            if (contact.id % 2 == 0L) {
+                Glide.with(item.thumbnail)
+                    .load("https://picsum.photos/200/200")
+                    .signature(ObjectKey(Math.random()))
+                    .circleCrop()
+                    .into(item.thumbnail)
+            } else {
+                item.initials.text = contact.name
+                    .split(" ")
+                    .take(2)
+                    .map {
+                        it.first()
+                    }
+                    .joinToString(separator = "")
+            }
+
             item.name.text = contact.name
+
         }
 
     }

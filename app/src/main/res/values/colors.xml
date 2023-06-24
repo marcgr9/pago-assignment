@@ -2,4 +2,5 @@
 <resources>
     <color name="frag_home_list_background">#eff2f7</color>
     <color name="frag_home_list_header">#a3adc2</color>
+    <color name="frag_home_list_thumbnail_background">#a3adc2</color>
 </resources>
