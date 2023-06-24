@@ -39,6 +39,8 @@ class ContactsAdapter(
     private class ViewHolder(private val item: CompContactBinding) : RecyclerView.ViewHolder(item.root) {
 
         fun bind(contact: Contact) {
+            reset()
+
             if (contact.id % 2 == 0L) {
                 Glide.with(item.thumbnail)
                     .load("https://picsum.photos/200/200")
@@ -57,6 +59,11 @@ class ContactsAdapter(
 
             item.name.text = contact.name
 
+        }
+
+        private fun reset() {
+            item.thumbnail.setImageResource(R.drawable.frag_main_thumbnail_placeholder)
+            item.initials.text = ""
         }
 
     }
