@@ -16,4 +16,8 @@ class Repository(
         )
     }
 
+    fun getPosts(id: Long) = flow {
+        emit(service.getPosts(id))
+    }
+
 }

@@ -13,6 +13,7 @@ import ro.marc.pago.R
 import ro.marc.pago.activity.MainActivity
 import ro.marc.pago.activity.MainActivityVM
 import ro.marc.pago.activity.adapter.ContactsAdapter
+import ro.marc.pago.activity.adapter.PostsAdapter
 import ro.marc.pago.databinding.FragMainDetailsBinding
 import ro.marc.pago.databinding.FragMainHomeBinding
 
@@ -27,6 +28,8 @@ class MainDetails: Fragment() {
     private val activity: MainActivity by lazy {
         requireActivity() as MainActivity
     }
+
+    private val postsAdapter = PostsAdapter()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
@@ -58,17 +61,15 @@ class MainDetails: Fragment() {
             binding.email.text = it.email
         }
 
-//        binding.list.apply {
-//            layoutManager = LinearLayoutManager(activity)
-//            adapter = contactsAdapter
-//        }
-//
-//        vm.getContacts()
-//        vm.contacts.observe(viewLifecycleOwner) {
-//            if (it.isNotEmpty()) activity.hasLoaded = true
-//
-//            contactsAdapter.setContacts(it)
-//        }
+        vm.getPosts()
+        vm.posts.observe(viewLifecycleOwner) {
+            postsAdapter.setPosts(it)
+        }
+
+        binding.list.apply {
+            layoutManager = LinearLayoutManager(activity)
+            adapter = postsAdapter
+        }
 
         return binding.root
     }

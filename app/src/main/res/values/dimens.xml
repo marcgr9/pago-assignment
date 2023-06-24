@@ -19,4 +19,6 @@
     <dimen name="view_x7">56dp</dimen>
     <dimen name="view_x8">64dp</dimen>
 
+    <dimen name="details_post_height">128dp</dimen>
+
 </resources>
