@@ -44,6 +44,9 @@ class MainHome: Fragment() {
 
         vm.getContacts()
         vm.contacts.observe(viewLifecycleOwner) {
+            // because no loading indicators were present in the design
+            // we don't really need to monitor the backend call status (loading, success, error, ..)
+            // and as such this check should be enough :)
             if (it.isNotEmpty()) activity.hasLoaded = true
 
             contactsAdapter.setContacts(it)

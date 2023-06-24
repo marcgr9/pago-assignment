@@ -10,7 +10,8 @@
         android:id="@+id/contact"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:padding="@dimen/view_x2"
+        android:paddingVertical="@dimen/view_x2"
+        android:paddingHorizontal="@dimen/view_x3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/arrow">
 
@@ -58,7 +59,7 @@
         android:src="@drawable/icon_chevron_right"
         app:tint="@color/frag_home_list_header"
         android:padding="@dimen/view_x1"
-        android:layout_marginEnd="@dimen/view_x2"
+        android:layout_marginEnd="@dimen/view_x3"
         app:layout_constraintStart_toEndOf="@id/contact"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

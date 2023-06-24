@@ -5,7 +5,7 @@
     <dimen name="text_small">13sp</dimen>
     <dimen name="text_medium">16sp</dimen>
     <dimen name="text_large">22sp</dimen>
-    <dimen name="text_xlarge">28sp</dimen>
+    <dimen name="text_xlarge">26sp</dimen>
 
     <dimen name="view_d8">1dp</dimen>
     <dimen name="view_d4">2dp</dimen>
