@@ -9,4 +9,9 @@
         android:name="ro.marc.pago.activity.fragments.MainHome"
         android:label="MainHome" />
 
+    <fragment
+        android:id="@+id/mainDetails"
+        android:name="ro.marc.pago.activity.fragments.MainDetails"
+        android:label="MainDetails" />
+
 </navigation>

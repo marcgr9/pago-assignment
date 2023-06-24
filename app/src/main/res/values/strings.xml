@@ -2,4 +2,6 @@
     <string name="app_name">Pago</string>
     <string name="app_contacts">Contacte</string>
     <string name="app_my_contacts">Contactele mele</string>
+
+    <string name="main_details_title">Detalii contact</string>
 </resources>

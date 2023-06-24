@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import ro.marc.pago.R
 import ro.marc.pago.activity.MainActivity
 import ro.marc.pago.activity.MainActivityVM
 import ro.marc.pago.activity.adapter.ContactsAdapter
@@ -25,7 +26,8 @@ class MainHome: Fragment() {
     }
 
     private val contactsAdapter = ContactsAdapter {
-        // activity.navController!!.navigate()
+        vm.selectedContact.value = it
+        activity.navController!!.navigate(R.id.mainDetails)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

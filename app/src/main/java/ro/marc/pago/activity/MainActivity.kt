@@ -2,6 +2,7 @@ package ro.marc.pago.activity
 
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -27,6 +28,10 @@ class MainActivity: AppCompatActivity() {
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.navHost) as NavHostFragment
         navController = navHostFragment.navController
+
+        findViewById<ImageView>(R.id.icon).setOnClickListener {
+            onBackPressed()
+        }
     }
 
     fun configureHeader(text: String?) {
@@ -35,6 +40,7 @@ class MainActivity: AppCompatActivity() {
             return
         }
 
+        findViewById<ConstraintLayout>(R.id.header).visibility = View.VISIBLE
         findViewById<TextView>(R.id.title).text = text
     }
 

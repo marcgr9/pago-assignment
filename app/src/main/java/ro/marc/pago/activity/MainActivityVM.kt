@@ -17,6 +17,10 @@ class MainActivityVM(
     val contacts: LiveData<List<Contact>>
         get() = _contacts
 
+    private var _selectedContact: MutableLiveData<Contact?> = MutableLiveData(null)
+    val selectedContact: MutableLiveData<Contact?>
+        get() = _selectedContact
+
     fun getContacts() {
         viewModelScope.launch {
             repository
