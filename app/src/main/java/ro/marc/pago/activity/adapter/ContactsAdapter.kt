@@ -42,7 +42,7 @@ class ContactsAdapter(
             if (contact.id % 2 == 0L) {
                 Glide.with(item.thumbnail)
                     .load("https://picsum.photos/200/200")
-                    .signature(ObjectKey(Math.random()))
+                    .signature(ObjectKey(contact.hashCode()))
                     .circleCrop()
                     .into(item.thumbnail)
             } else {
